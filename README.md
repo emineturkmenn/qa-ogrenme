@@ -5,16 +5,17 @@ Bu proje, Python programlama dili ve Selenium kütüphanesi kullanılarak hazır
 ## Proje Yapısı
 
 ```
-qa-ogrenme/
 │
-├── archive/                    # Eski çalışmalar (arşiv)
-├── drivers/                   # ChromeDriver içeren dizin (Git'e eklenmez)
-│   └── chromedriver-win64/
-├── tests/                     # Test senaryoları
-│   └── test_duckduckgo_search.py
-├── conftest.py                # Pytest için fixture yapılandırması
-├── requirements.txt           # Bağımlılık dosyası
-└── .gitignore                 # Gereksiz dosyaların takibini engeller
+├── drivers/                    # ChromeDriver dosyası burada tutulur (Git'e eklenmez)
+│ └── chromedriver-win64/
+├── pages/                      # Sayfa objeleri (Page Object Model yapısı)
+│ └── duckduckgo_search_page.py
+├── tests/                      # Test senaryoları
+│ └── test_duckduckgo_search.py
+├── conftest.py                 # Pytest için fixture yapılandırması
+├── requirements.txt            # Bağımlılıkları listeler
+├── .gitignore                  # Gereksiz dosyaların takibini engeller
+└── README.md                   # Proje dokümantasyonu
 ```
 
 ## Kullanılan Teknolojiler
