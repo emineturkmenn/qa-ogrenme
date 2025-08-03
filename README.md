@@ -9,7 +9,8 @@ Bu proje, Python programlama dili ve Selenium kütüphanesi kullanılarak hazır
 ├── drivers/                    # ChromeDriver dosyası burada tutulur (Git'e eklenmez)
 │ └── chromedriver-win64/
 ├── pages/                      # Sayfa objeleri (Page Object Model yapısı)
-│ └── duckduckgo_search_page.py
+│ └── duckduckgo_result_page.py
+| └── duckduckgo_search_page.py
 ├── tests/                      # Test senaryoları
 │ └── test_duckduckgo_search.py
 ├── conftest.py                 # Pytest için fixture yapılandırması
