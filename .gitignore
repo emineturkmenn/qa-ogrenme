@@ -9,3 +9,4 @@ __pycache__/
 chromedriver-win64/
 .pytest_cache
 .hypothesis
+venv

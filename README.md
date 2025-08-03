@@ -57,6 +57,9 @@ Test başarıyla çalışırsa, DuckDuckGo'da "selenium python" araması yapıla
 - `chromedriver-win64/` klasörü `.gitignore` dosyasına eklenmiştir. Bu nedenle GitHub'a yüklenmez.
 - Tarayıcı penceresi kısa sürede açılıp kapanabilir. Gözle görülemeyebilir ama test geçmişi terminalden takip edilebilir.
 
+> **Not:** Testler şu anda **headless mod kapalı** olarak çalışmaktadır...
+
+
 ## Katkıda Bulunmak
 
 Katkılarınızı memnuniyetle karşılıyorum. Sorun bildirebilir veya yeni test senaryoları ekleyebilirsiniz.
