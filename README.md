@@ -11,6 +11,8 @@ Bu proje, Python programlama dili ve Selenium kütüphanesi kullanılarak hazır
 ├── pages/                      # Sayfa objeleri (Page Object Model yapısı)
 │ └── duckduckgo_result_page.py
 | └── duckduckgo_search_page.py
+├── reports/                    # HTML raporlar burada
+│   └── report.html
 ├── tests/                      # Test senaryoları
 │ └── test_duckduckgo_search.py
 ├── conftest.py                 # Pytest için fixture yapılandırması
@@ -52,6 +54,14 @@ pytest
 ```
 
 Test başarıyla çalışırsa, DuckDuckGo'da "selenium python" araması yapılacak ve sonuçlar kontrol edilecektir.
+
+## Test Raporları
+
+Aşağıdaki komut ile HTML formatında test raporu oluşturulur:
+
+```bash
+pytest --html=reports/report.html --self-contained-html
+```
 
 ## Notlar
 
