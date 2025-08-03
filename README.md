@@ -5,9 +5,7 @@ Bu proje, Python programlama dili ve Selenium kütüphanesi kullanılarak hazır
 ## Proje Yapısı
 
 ```
-│
-├── drivers/                    # ChromeDriver dosyası burada tutulur (Git'e eklenmez)
-│ └── chromedriver-win64/
+|
 ├── pages/                      # Sayfa objeleri (Page Object Model yapısı)
 │ └── duckduckgo_result_page.py
 | └── duckduckgo_search_page.py
@@ -23,10 +21,11 @@ Bu proje, Python programlama dili ve Selenium kütüphanesi kullanılarak hazır
 
 ## Kullanılan Teknolojiler
 
-- Python 3.10
+- Python 3.10+
 - Selenium
 - Pytest
-- Chrome ve ChromeDriver
+- [webdriver-manager](https://pypi.org/project/webdriver-manager/)
+
 
 ## Kurulum
 
@@ -43,17 +42,19 @@ cd qa-ogrenme
 pip install -r requirements.txt
 ```
 
-3. **ChromeDriver’ı indirip `drivers/chromedriver-win64/` klasörüne yerleştirin.**
-
-[ChromeDriver İndir (Sürümünüze uygun olanı seçin)](https://googlechromelabs.github.io/chrome-for-testing/)
-
 ## Testi Çalıştırma
 
 ```bash
 pytest
 ```
 
-Test başarıyla çalışırsa, DuckDuckGo'da "selenium python" araması yapılacak ve sonuçlar kontrol edilecektir.
+Test başarıyla çalışırsa, DuckDuckGo'da `"selenium python"` araması yapılacak ve sonuçlar kontrol edilecektir.
+
+## WebDriver Hakkında
+
+Bu projede [`webdriver-manager`](https://pypi.org/project/webdriver-manager/) eklentisi kullanılarak ChromeDriver'ın sisteminize uygun sürümü **otomatik olarak indirilir ve kullanılır.**
+
+Artık `chromedriver.exe` gibi dosyaları manuel indirmenize gerek yoktur. Bu nedenle `drivers/` klasörüne ihtiyaç kalmamıştır.
 
 ## Test Raporları
 
@@ -67,8 +68,7 @@ pytest --html=reports/report.html --self-contained-html
 
 - `chromedriver-win64/` klasörü `.gitignore` dosyasına eklenmiştir. Bu nedenle GitHub'a yüklenmez.
 - Tarayıcı penceresi kısa sürede açılıp kapanabilir. Gözle görülemeyebilir ama test geçmişi terminalden takip edilebilir.
-
-> **Not:** Testler şu anda **headless mod kapalı** olarak çalışmaktadır...
+- Testler şu anda **headless mod kapalı** olarak çalışmaktadır...
 
 
 ## Katkıda Bulunmak
