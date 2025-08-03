@@ -15,3 +15,8 @@ class DuckDuckGoResultPage:
 
     def result_links_count(self):
         return len(self.driver.find_elements(*self.RESULT_LINKS))
+
+    def get_first_result_link(self, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, 'a[data-testid="result-title-a"]'))
+        )
