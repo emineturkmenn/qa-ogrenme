@@ -6,7 +6,6 @@ __pycache__/
 *.sqlite3
 .env
 .vscode/
-chromedriver-win64/
 .pytest_cache
 .hypothesis
 *venv
