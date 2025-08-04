@@ -61,6 +61,33 @@ pytest --html=reports/report.html --self-contained-html
 ```
 `report.html` dosyasını tarayıcıda açarak sonuçları görselleştirilmiş şekilde inceleyebilirsiniz.
 
+## 🧪 Allure ile Gelişmiş Test Raporu Oluşturma
+Bu projede [Allure Test Report](https://docs.qameta.io/allure/) entegrasyonu yapılmıştır. Allure, test süreçlerini daha anlaşılır ve görsel hale getiren güçlü bir raporlama aracıdır.
+
+### 1. Allure için testleri çalıştırma
+```bash
+pytest --alluredir=allure-results
+```
+Bu komut, Allure için gerekli ham test sonuçlarını ```allure-results/``` klasörüne oluşturur.
+### 2. Allure raporunu oluşturup tarayıcıda açma
+```bash
+allure serve allure-results
+```
+```serve``` komutu, Allure raporunu derler ve varsayılan tarayıcıda açar.
+
+### 3. Statik HTML raporu oluşturma (opsiyonel)
+```bash
+allure generate allure-results --clean -o allure-report
+```
+Oluşan ```allure-report/``` klasörü taşınabilir, paylaşılabilir bir statik HTML raporu içerir.
+
+### Kurulum Notu
+Allure komutu sisteminizde çalışmıyorsa, ```allure``` binary'sinin bulunduğu klasörü sistem ```PATH``` değişkeninize eklemeniz gerekir. Ayrıca Java kurulu olmalı ve ```JAVA_HOME``` tanımlanmalıdır.
+```bash
+JAVA_HOME=C:\Program Files\Java\jdk-XX
+PATH=C:\allure\allure-2.34.1\bin
+```
+
 ## Notlar
 
 - Tarayıcı penceresi kısa sürede açılıp kapanabilir. Gözle görülemeyebilir ama test geçmişi terminalden takip edilebilir.
