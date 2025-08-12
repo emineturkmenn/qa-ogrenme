@@ -1,5 +1,6 @@
 import pytest
 import shutil
+import tempfile
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -27,8 +28,11 @@ def browser(request):
         if headless:
             options.add_argument("--headless=new")
         options.add_argument("--window-size=1920,1080")
+        user_data_dir = tempfile.mkdtemp()
+        options.add_argument(f"--user-data-dir={user_data_dir}")
         service = ChromeService(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=options)
+
 
     elif browser_name == "firefox":
         if not shutil.which("firefox"):
