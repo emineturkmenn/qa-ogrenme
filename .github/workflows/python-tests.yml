@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python 3.10
       uses: actions/setup-python@v4
       with:
-          python-version: "3.10"
+        python-version: "3.10"
 
     - name: Install dependencies
       run: |
@@ -26,4 +26,4 @@ jobs:
 
     - name: Run tests with headless Chrome
       run: |
-        pytest --headless --maxfail=1 --disable-warnings -q
+        pytest --headless --browser chrome --maxfail=1 --disable-warnings -q
