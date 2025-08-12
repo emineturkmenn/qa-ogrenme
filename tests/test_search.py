@@ -10,9 +10,13 @@ from pages.duckduckgo_search_page import DuckDuckGoSearchPage
 ])
 def test_duckduckgo_search(browser, search_term):
     page = DuckDuckGoSearchPage(browser)
+
     with allure.step("Sayfayı yükle"):
         page.load()
+
     with allure.step(f"'{search_term}' terimini ara"):
         page.search(search_term)
+
     with allure.step("Sonucu doğrula"):
-        assert search_term.lower() in browser.page_source.lower()
+        results = page.results_exist()
+        assert any(search_term.lower() in r.text.lower() for r in results)
